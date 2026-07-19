@@ -1,0 +1,12 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:listViewStyle">@style/ListViewStyle</item>
+    </style>
+    
+    <style name="ListViewStyle" parent="Widget.AppCompat.ListView">
+        <item name="android:listSelector">@drawable/selector_item_liste</item>
+        <item name="android:cacheColorHint">#00000000</item>
+    </style>
+</resources>

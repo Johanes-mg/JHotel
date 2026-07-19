@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#9C27B0">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gestion des Sejours"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FFFFFF">
+
+            <Spinner
+                android:id="@+id/spinnerChambresSejour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date d'entree"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etDateEntreeSejour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="jj/mm/aaaa"
+                android:inputType="number"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:maxLength="10"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/tvPrixTotalSejour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prix / nuit: 0 Ar"
+                android:textSize="14sp"
+                android:textColor="#4CAF50"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/etNbrJourSejour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de jours"
+                android:inputType="number"
+                android:layout_marginBottom="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"/>
+
+            <EditText
+                android:id="@+id/etNomClientSejour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom du client"
+                android:inputType="text"
+                android:layout_marginBottom="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"/>
+
+            <EditText
+                android:id="@+id/etTelephoneSejour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telephone"
+                android:inputType="phone"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/btnSejourner"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Enregistrer"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="6dp"/>
+
+        <Button
+            android:id="@+id/btnSupprimerSejour"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Supprimer"
+            android:backgroundTint="#F44336"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="6dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnListeSejour"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Afficher la liste"
+        android:backgroundTint="#9C27B0"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnPDF"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Generer PDF Recu"
+        android:backgroundTint="#795548"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="12dp"/>
+
+    <ListView
+        android:id="@+id/listViewSejours"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:divider="#E0E0E0"
+        android:dividerHeight="1dp"/>
+
+</LinearLayout>

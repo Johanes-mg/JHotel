@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <!-- Titre -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FF9800">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gestion des Reservations"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Formulaire -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FFFFFF">
+
+            <Spinner
+                android:id="@+id/spinnerChambres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etDateEntree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="jj/mm/aaaa"
+                android:inputType="number"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:maxLength="10"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/tvPrixTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prix / nuit: 0 Ar"
+                android:textSize="14sp"
+                android:textColor="#4CAF50"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/etNbrJour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de jours"
+                android:inputType="number"
+                android:layout_marginBottom="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"/>
+
+            <EditText
+                android:id="@+id/etNomClient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom du client"
+                android:inputType="text"
+                android:layout_marginBottom="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"/>
+
+            <EditText
+                android:id="@+id/etMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email du client"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"/>
+
+            <Button
+                android:id="@+id/btnReserver"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Reserver"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Onglets -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/btnOngletEnAttente"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="En attente"
+            android:textSize="14sp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="4dp"/>
+
+        <Button
+            android:id="@+id/btnOngletOccupees"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Occupées"
+            android:textSize="14sp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="4dp"/>
+
+    </LinearLayout>
+
+    <!-- Liste En Attente -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardEnAttente"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reservations en attente"
+                android:textSize="14sp"
+                android:textColor="#999999"
+                android:layout_marginBottom="8dp"/>
+
+            <ListView
+                android:id="@+id/listViewEnAttente"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:divider="#E0E0E0"
+                android:dividerHeight="1dp"/>
+
+            <Button
+                android:id="@+id/btnOccuper"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Occuper la reservation"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:enabled="false"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Liste Occupées -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardOccupees"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reservations occupees"
+                android:textSize="14sp"
+                android:textColor="#999999"
+                android:layout_marginBottom="8dp"/>
+
+            <ListView
+                android:id="@+id/listViewOccupees"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:divider="#E0E0E0"
+                android:dividerHeight="1dp"/>
+
+            <Button
+                android:id="@+id/btnSupprimerOccuper"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Supprimer occupation"
+                android:backgroundTint="#F44336"
+                android:textColor="#FFFFFF"
+                android:enabled="false"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
